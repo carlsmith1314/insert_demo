@@ -1,36 +1,21 @@
 package com.example.insert_demo.Operate;
 
 import com.example.insert_demo.Entity.Technical;
-import com.example.insert_demo.Mapper.TechnicalMapper;
 import com.example.insert_demo.Service.TechnicalService;
 import lombok.SneakyThrows;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.FileInputStream;
 
 
-public class writeIn {
-    @Autowired private TechnicalService technicalService;
-
-    /*
-    private final TechnicalMapper technicalMapper;
-
-    public writeIn(TechnicalMapper technicalMapper) {
-        this.technicalMapper = technicalMapper;
-    }
-    */
-
-    public writeIn(@Autowired TechnicalService technicalService){
-        this.technicalService = technicalService;
-    }
-
+public class Run_excel {
     @SneakyThrows
-    public void technicalInputFile(){
+    public static void main(String[] args){
+        TechnicalService technicalService;
         Technical technical = new Technical();
         //TODO 用流的方式读取excel文件
         FileInputStream data = new FileInputStream("/home/carlsmith-wuzhuo/keyword_matching/src/main/resources/word.xlsx");
@@ -72,8 +57,5 @@ public class writeIn {
              */
         }
         data.close();
-    }
-    public static void main(String[] args){
-
     }
 }
