@@ -47,7 +47,7 @@ public class Run_excel {
             technical.setSource(row.getCell(last_col - 3).toString());
             //todo 获取版本
             technical.setVersion(row.getCell(last_col - 2).toString());
-            technicalService.insert(technical);
+            //technicalService.insert(technical);
             /*
             technicalMapper.insert(row.getCell(first_col).toString(), row.getCell(first_col + 1).toString(),
                     row.getCell(first_col + 2).toString(), row.getCell(first_col + 3).toString(),
